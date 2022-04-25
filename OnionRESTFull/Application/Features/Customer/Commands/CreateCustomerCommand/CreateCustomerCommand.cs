@@ -41,4 +41,12 @@ namespace Application.Features.Customer.Commands.CreateCustomerCommand
             set;
         }
     }
+
+    public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, Response<int>>
+    {
+        public async Task<Response<int>> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
