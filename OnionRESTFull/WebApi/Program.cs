@@ -1,12 +1,16 @@
 using Application;
 using Microsoft.OpenApi.Models;
+using Persistence;
+using Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
 builder.Services.AddApplicationLayer();
+builder.Services.AddSharedInfraestructure(builder.Configuration);
+builder.Services.AddPersistenceInfraestructure(builder.Configuration);
+builder.Services.AddControllers();
 
 builder.Services.AddSwaggerGen(options =>
 {

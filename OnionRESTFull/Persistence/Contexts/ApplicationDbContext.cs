@@ -2,6 +2,7 @@
 using Domain.Common;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace Persistence.Contexts
 {
@@ -35,6 +36,11 @@ namespace Persistence.Contexts
             }
 
             return base.SaveChangesAsync(cancellationToken);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }
