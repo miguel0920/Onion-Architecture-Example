@@ -2,6 +2,7 @@ using Application;
 using Microsoft.OpenApi.Models;
 using Persistence;
 using Shared;
+using WebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,9 +51,7 @@ app.UseSwaggerUI(options =>
 });
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
+app.UseErrorHandlerMiddlewares();
 app.MapControllers();
-
 app.Run();

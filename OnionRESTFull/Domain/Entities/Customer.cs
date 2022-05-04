@@ -18,7 +18,7 @@ namespace Domain.Entities
             {
                 if (_age <= 0)
                 {
-                    _age = new DateTime(DateTime.Now.Subtract(BirthdayDate.HasValue ? BirthdayDate.Value : DateTime.Now).Ticks).Year - 1;
+                    _age = new DateTime(DateTime.Now.Subtract(BirthdayDate ?? DateTime.Now).Ticks).Year - 1;
                 }
                 return _age;
             }
