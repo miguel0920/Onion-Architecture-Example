@@ -8,7 +8,7 @@
             set;
         }
 
-        public T Data
+        public T? Data
         {
             get;
             set;
@@ -26,10 +26,7 @@
             set;
         }
 
-        public Response()
-        {
-
-        }
+        public Response() { }
 
         public Response(T data, string? message = null)
         {

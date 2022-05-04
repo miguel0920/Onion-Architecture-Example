@@ -16,7 +16,7 @@ namespace Persistence.Contexts
             _dateTimeService = dateTimeService;
         }
 
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Customer>? Customers { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

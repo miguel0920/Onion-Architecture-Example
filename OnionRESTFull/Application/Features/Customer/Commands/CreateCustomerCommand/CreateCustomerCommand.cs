@@ -5,13 +5,13 @@ namespace Application.Features.Customer.Commands.CreateCustomerCommand
 {
     public class CreateCustomerCommand : IRequest<Response<int>>
     {
-        public string Name
+        public string? Name
         {
             get;
             set;
         }
 
-        public string LastName
+        public string? LastName
         {
             get;
             set;
@@ -23,19 +23,19 @@ namespace Application.Features.Customer.Commands.CreateCustomerCommand
             set;
         }
 
-        public string Phone
+        public string? Phone
         {
             get;
             set;
         }
 
-        public string Email
+        public string? Email
         {
             get;
             set;
         }
 
-        public string Address
+        public string? Address
         {
             get;
             set;
@@ -44,7 +44,7 @@ namespace Application.Features.Customer.Commands.CreateCustomerCommand
 
     public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, Response<int>>
     {
-        public async Task<Response<int>> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
+        public Task<Response<int>> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

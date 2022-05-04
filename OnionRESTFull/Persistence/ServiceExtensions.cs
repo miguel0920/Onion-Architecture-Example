@@ -9,7 +9,7 @@ namespace Persistence
 {
     public static class ServiceExtensions
     {
-        public static void AddPersistenceInfraestructure (this IServiceCollection service, IConfiguration configuration)
+        public static void AddPersistenceInfraestructure(this IServiceCollection service, IConfiguration configuration)
         {
             service.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                 b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
