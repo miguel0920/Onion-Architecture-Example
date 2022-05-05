@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationLayer();
 builder.Services.AddSharedInfraestructure(builder.Configuration);
 builder.Services.AddPersistenceInfraestructure(builder.Configuration);
+builder.Services.AddApiVersion();
 builder.Services.AddControllers();
 
 builder.Services.AddSwaggerGen(options =>

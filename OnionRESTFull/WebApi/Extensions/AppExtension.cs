@@ -2,7 +2,7 @@
 
 namespace WebApi.Extensions
 {
-    public static class AppExtensions
+    public static class AppExtension
     {
         public static void UseErrorHandlerMiddlewares(this IApplicationBuilder app)
         {

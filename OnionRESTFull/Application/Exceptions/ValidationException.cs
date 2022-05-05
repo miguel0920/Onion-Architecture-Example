@@ -12,16 +12,16 @@ namespace Application.Exceptions
             Errors = new Response<string>();
         }
 
-        public ValidationException(IEnumerable<ValidationFailure> failures)
+        public ValidationException(IEnumerable<ValidationFailure> failures) : base("Se ha producido uno o más errores de validación.")
         {
+            Errors = new Response<string>();
             List<string> messages = new();
             foreach (var failure in failures)
             {
                 messages.Add(failure.ErrorMessage);
             }
-            Errors!.Errors = messages;
-            Errors!.Succeeded = false;
-            Errors!.Message = "Se ha producido uno o más errores de validación.";
+            Errors.Errors = messages;
+            Errors.Succeeded = false;
         }
     }
 }
