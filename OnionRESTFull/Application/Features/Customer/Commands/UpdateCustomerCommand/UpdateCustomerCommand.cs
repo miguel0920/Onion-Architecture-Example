@@ -1,10 +1,15 @@
-﻿using Application.Wrappers;
-using MediatR;
+﻿using MediatR;
 
-namespace Application.Features.Customer.Commands.CreateCustomerCommand
+namespace Application.Features.Customer.Commands.UpdateCustomerCommand
 {
-    public class CreateCustomerCommand : IRequest<Response<Guid>>
+    public class UpdateCustomerCommand : INotification
     {
+        public Guid Id
+        {
+            get;
+            set;
+        }
+
         public string? Name
         {
             get;

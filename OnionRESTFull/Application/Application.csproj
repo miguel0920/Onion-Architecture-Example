@@ -18,8 +18,6 @@
 
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Features\Customer\Commands\DeleteCustomerCommand\" />
-    <Folder Include="Features\Customer\Commands\UpdateCustomerCommand\" />
     <Folder Include="Features\Customer\Queries\GetAllCustomers\" />
     <Folder Include="Features\Customer\Queries\GetCustomerById\" />
     <Folder Include="Filters\" />
