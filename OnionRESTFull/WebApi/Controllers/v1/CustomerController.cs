@@ -1,6 +1,7 @@
 ﻿using Application.Features.Customer.Commands.CreateCustomerCommand;
 using Application.Features.Customer.Commands.DeleteCustomerCommand;
 using Application.Features.Customer.Commands.UpdateCustomerCommand;
+using Application.Features.Customer.Queries.GetCustomerById;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers.v1
@@ -8,6 +9,9 @@ namespace WebApi.Controllers.v1
     [ApiVersion("1.0")]
     public class CustomerController : BaseApiController
     {
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(Guid id) => Ok(await Mediator.Send(new GetCustomerByIdQuery { Id = id }));
+
         [HttpPost]
         public async Task<IActionResult> Post(CreateCustomerCommand createCustomer) => Ok(await Mediator.Send(createCustomer));
 

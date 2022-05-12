@@ -1,4 +1,5 @@
-﻿using Application.Features.Customer.Commands.CreateCustomerCommand;
+﻿using Application.DTOs;
+using Application.Features.Customer.Commands.CreateCustomerCommand;
 using AutoMapper;
 using Domain.Entities;
 
@@ -8,6 +9,8 @@ namespace Application.Mappings
     {
         public CustomerMapper()
         {
+            CreateMap<Customer, CustomerDTO>();
+
             CreateMap<CreateCustomerCommand, Customer>();
         }
     }
