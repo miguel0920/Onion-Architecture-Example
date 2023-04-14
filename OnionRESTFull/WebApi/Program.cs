@@ -54,5 +54,6 @@ app.UseSwaggerUI(options =>
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseErrorHandlerMiddlewares();
+app.UseTimeMiddlewares();
 app.MapControllers();
 app.Run();

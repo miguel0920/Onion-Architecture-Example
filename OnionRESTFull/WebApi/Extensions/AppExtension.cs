@@ -8,5 +8,10 @@ namespace WebApi.Extensions
         {
             app.UseMiddleware<ErrorHandlerMiddlewares>();
         }
+
+        public static void UseTimeMiddlewares(this IApplicationBuilder app)
+        {
+            app.UseMiddleware<TimeMiddlewares>();
+        }
     }
 }
